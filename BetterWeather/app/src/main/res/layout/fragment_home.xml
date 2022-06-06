@@ -3,14 +3,101 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  xmlns:app="http://schemas.android.com/apk/res-auto">
-  <TextView
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/weatherHeader"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:text="Hello fragment"
+    android:background="@drawable/blue_sky_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+      android:id="@+id/cityName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:fontFamily="@font/open_sans_regular"
+      android:textColor="@color/secondary_text_color"
+      android:textSize="18sp"
+      android:layout_marginTop="@dimen/dp16"
+      android:layout_marginBottom="@dimen/dp4"
+      tools:text="Atlanta, GA"
+      android:text="Atlanta, GA"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/forecastIcon"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintTop_toBottomOf="@id/cityName"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/forecastTextView"
+      android:layout_marginEnd="8dp"
+      app:srcCompat="@drawable/ic_weather_cloudy"
+      android:tint="@color/white"
+      android:layout_width="24dp"
+      android:layout_height="24dp" />
+    <TextView
+      android:id="@+id/forecastTextView"
+      app:layout_constraintTop_toTopOf="@id/forecastIcon"
+      app:layout_constraintBottom_toBottomOf="@id/forecastIcon"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/forecastIcon"
+      android:fontFamily="@font/open_sans_regular"
+      android:textSize="14sp"
+      android:textColor="@color/secondary_text_color"
+      tools:text="Partly Cloudy"
+      android:text="Partly Cloudy"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    <TextView
+      android:id="@+id/tempTextView"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/forecastTextView"
+      android:layout_marginTop="@dimen/dp16"
+      android:fontFamily="@font/open_sans_regular"
+      android:textColor="@color/secondary_text_color"
+      android:textSize="56sp"
+      tools:text="72°"
+      android:text="72°"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <TextView
+      android:id="@+id/feelsLikeTextView"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tempTextView"
+      android:fontFamily="@font/open_sans_regular"
+      android:textColor="@color/secondary_text_color"
+      android:paddingBottom="@dimen/dp16"
+      android:textSize="12sp"
+      tools:text="Feels like 82°"
+      android:text="Feels like 82°"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+  <TextView
+    android:id="@+id/tenDayForecastLabel"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/weatherHeader"
+    android:fontFamily="@font/open_sans_bold"
+    android:textSize="16sp"
     android:textColor="@color/primary_text_color"
+    android:layout_marginStart="@dimen/dp32"
+    android:layout_marginTop="@dimen/dp16"
+    android:text="@string/ten_day_forecast_label"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content" />
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/forecastRecyclerView"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tenDayForecastLabel"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginTop="@dimen/dp16"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

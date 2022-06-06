@@ -2,5 +2,6 @@
 <resources>
   <style name="ToolbarStyle" parent="ThemeOverlay.AppCompat.Light">
       <item name="android:fontFamily">@font/open_sans_extra_bold</item>
+      <item name="android:textColor">@color/primary_text_color</item>
   </style>
 </resources>
