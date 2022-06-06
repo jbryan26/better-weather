@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/forecastItemIcon"
+    app:srcCompat="@drawable/ic_weather_cloudy"
+    android:tint="@color/primary_text_color"
+    android:layout_marginStart="@dimen/dp32"
+    app:layout_constraintTop_toTopOf="@id/forecastItemDayOfWeek"
+    app:layout_constraintBottom_toBottomOf="@id/forecastItemDayOutlook"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_width="32dp"
+    android:layout_height="32dp"/>
+  <TextView
+    android:id="@+id/forecastItemDayOfWeek"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toEndOf="@id/forecastItemIcon"
+    android:layout_marginTop="@dimen/dp16"
+    android:fontFamily="@font/open_sans_bold"
+    android:textColor="@color/primary_text_color"
+    android:layout_marginStart="@dimen/dp4"
+    tools:text="Saturday"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView
+    android:id="@+id/forecastItemDayHighTemp"
+    app:layout_constraintTop_toTopOf="@id/forecastItemDayOfWeek"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:fontFamily="@font/open_sans_bold"
+    android:textColor="@color/primary_text_color"
+    tools:text="77°"
+    android:layout_marginEnd="@dimen/dp32"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView
+    android:id="@+id/forecastItemDayOutlook"
+    app:layout_constraintTop_toBottomOf="@id/forecastItemDayOfWeek"
+    app:layout_constraintStart_toEndOf="@id/forecastItemIcon"
+    android:fontFamily="@font/open_sans_regular"
+    android:textColor="@color/subtitle_color"
+    android:layout_marginStart="@dimen/dp4"
+    tools:text="Cloudy"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView
+    android:id="@+id/forecastItemDayLowTemp"
+    app:layout_constraintTop_toBottomOf="@id/forecastItemDayHighTemp"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:fontFamily="@font/open_sans_regular"
+    android:textColor="@color/subtitle_color"
+    tools:text="77°"
+    android:layout_marginEnd="@dimen/dp32"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView
+    android:id="@+id/humidity"
+    tools:text="Humidity: 81%"
+    android:layout_marginTop="@dimen/dp8"
+    android:fontFamily="@font/open_sans_regular"
+    android:textColor="@color/subtitle_color"
+    app:layout_constraintStart_toStartOf="@id/forecastItemDayOutlook"
+    app:layout_constraintTop_toBottomOf="@id/forecastItemDayOutlook"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <TextView
+    android:id="@+id/pressure"
+    tools:text="Pressure: 1017 hPa"
+    android:fontFamily="@font/open_sans_regular"
+    android:textColor="@color/subtitle_color"
+    app:layout_constraintStart_toStartOf="@id/forecastItemDayOutlook"
+    app:layout_constraintTop_toBottomOf="@id/humidity"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp" />
+  <TextView
+    android:id="@+id/wind"
+    tools:text="Wind: 2 km/h NW"
+    android:fontFamily="@font/open_sans_regular"
+    android:textColor="@color/subtitle_color"
+    app:layout_constraintStart_toStartOf="@id/forecastItemDayOutlook"
+    app:layout_constraintTop_toBottomOf="@id/pressure"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  <View
+    android:id="@+id/divider"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/wind"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:background="@color/divider_background"
+    android:layout_width="0dp"
+    android:layout_height="2dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
