@@ -4,6 +4,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.ujimatech.betterweather">
 
+  <uses-permission android:name="android.permission.INTERNET" />
+
   <application
     android:name=".BetterWeatherApplication"
     android:allowBackup="true"

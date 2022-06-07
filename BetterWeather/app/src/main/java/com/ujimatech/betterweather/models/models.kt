@@ -1,7 +1,8 @@
 package com.ujimatech.betterweather.models
-import android.graphics.drawable.Drawable
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class WeatherMapResponse(
     val city: City = City(),
     val cnt: Int = 0,
@@ -10,6 +11,7 @@ data class WeatherMapResponse(
     val message: Double = 0.0
 )
 
+@JsonClass(generateAdapter = true)
 data class City(
     val coord: Coord = Coord(),
     val country: String = "",
@@ -25,6 +27,7 @@ data class WeatherItemModel(
     val weatherOutlook: String = "",
     val tempHigh: String = "",
     val tempLow: String = "",
+    val dayTemp: String = "",
     val humidity: String = "",
     val pressure: String = "",
     val windSpeed: String = "",
@@ -32,6 +35,7 @@ data class WeatherItemModel(
     var isExpanded: Boolean = false
 )
 
+@JsonClass(generateAdapter = true)
 data class DayWeather(
     val clouds: Int = 0,
     val deg: Int = 0,
@@ -50,11 +54,13 @@ data class DayWeather(
     val weather: List<Weather> = listOf()
 )
 
+@JsonClass(generateAdapter = true)
 data class Coord(
     val lat: Double = 0.0,
     val lon: Double = 0.0
 )
 
+@JsonClass(generateAdapter = true)
 data class FeelsLike(
     val day: Double = 0.0,
     val eve: Double = 0.0,
@@ -62,6 +68,7 @@ data class FeelsLike(
     val night: Double = 0.0
 )
 
+@JsonClass(generateAdapter = true)
 data class Temp(
     val day: Double = 0.0,
     val eve: Double = 0.0,
@@ -71,6 +78,7 @@ data class Temp(
     val night: Double = 0.0
 )
 
+@JsonClass(generateAdapter = true)
 data class Weather(
     val description: String = "",
     val icon: String = "",

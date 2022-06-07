@@ -31,7 +31,7 @@ class HomePageAdapter(
         viewHolder: HomePageViewHolder,
         position: Int
     ) {
-        contentItemModels[position].apply {
+        contentItemModels[position + 1].apply {
             val context = viewHolder.container.context
             viewHolder.forecastItemDayHighTemp.text = String.format(context.getString(R.string.high_temp_string_template), tempHigh)
             viewHolder.forecastItemDayLowTemp.text = String.format(context.getString(R.string.low_temp_string_template), tempLow)
@@ -60,7 +60,7 @@ class HomePageAdapter(
     }
 
     override fun getItemCount(): Int {
-        return contentItemModels.size
+        return contentItemModels.size - 1
     }
 }
 
