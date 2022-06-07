@@ -41,7 +41,7 @@ class HomeFragment: Fragment() {
                          binding.cityName.text = weatherMapResponse.city.name
                          binding.forecastIcon.setImageDrawable(requireActivity().getDrawable(iconId))
                          binding.forecastTextView.text = weatherOutlook
-                         binding.tempTextView.text = dayTemp
+                         binding.tempTextView.text = String.format(getString(R.string.day_temp_string_template), dayTemp)
                          binding.feelsLikeTextView.text = String.format(getString(R.string.feels_like_template), weatherMapResponse.list.first().feelsLike.day.roundToInt())
                      }
                      adapter = HomePageAdapter(viewModel.getWeatherDataList(), object:OnDayWeatherClickListener {

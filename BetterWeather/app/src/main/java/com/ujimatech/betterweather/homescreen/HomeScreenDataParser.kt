@@ -95,6 +95,8 @@ class HomeScreenDataParser {
     }
 
     fun getDayStringFromUtcString(utcString: String): String {
+        //TODO: Correct date parsing
+
         // val date = Date(utcString.toLong()).toInstant()
 
         // return SimpleDateFormat("EEEE", Locale.getDefault()).format(date)

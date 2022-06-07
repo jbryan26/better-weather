@@ -4,6 +4,7 @@
   <string name="toolbar_name">SUNSHINE</string>
   <string name="degrees_string">°</string>
   <string name="ten_day_forecast_label">10-Day Forecast</string>
+  <string name="day_temp_string_template">%1$s°</string>
   <string name="high_temp_string_template">%1$s°</string>
   <string name="low_temp_string_template">%1$s°</string>
   <string name="humidity_string_template">Humidity: %1$s%%</string>
