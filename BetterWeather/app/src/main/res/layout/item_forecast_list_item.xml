@@ -23,7 +23,7 @@
     android:layout_marginTop="@dimen/dp16"
     android:fontFamily="@font/open_sans_bold"
     android:textColor="@color/primary_text_color"
-    android:layout_marginStart="@dimen/dp4"
+    android:layout_marginStart="@dimen/dp8"
     tools:text="Saturday"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
@@ -40,10 +40,9 @@
   <TextView
     android:id="@+id/forecastItemDayOutlook"
     app:layout_constraintTop_toBottomOf="@id/forecastItemDayOfWeek"
-    app:layout_constraintStart_toEndOf="@id/forecastItemIcon"
+    app:layout_constraintStart_toStartOf="@id/forecastItemDayOfWeek"
     android:fontFamily="@font/open_sans_regular"
     android:textColor="@color/subtitle_color"
-    android:layout_marginStart="@dimen/dp4"
     tools:text="Cloudy"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
@@ -92,6 +91,7 @@
     app:layout_constraintTop_toBottomOf="@id/wind"
     android:layout_marginStart="24dp"
     android:layout_marginEnd="24dp"
+    android:layout_marginTop="@dimen/dp8"
     android:background="@color/divider_background"
     android:layout_width="0dp"
     android:layout_height="2dp"/>

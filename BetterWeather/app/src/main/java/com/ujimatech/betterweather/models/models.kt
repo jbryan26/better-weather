@@ -20,14 +20,16 @@ data class City(
 )
 
 data class WeatherItemModel(
-    val icon: Drawable,
+    val iconId: Int,
     val dayName: String = "",
     val weatherOutlook: String = "",
     val tempHigh: String = "",
     val tempLow: String = "",
     val humidity: String = "",
     val pressure: String = "",
-    val wind: String = ""
+    val windSpeed: String = "",
+    val windDirection: String = "",
+    var isExpanded: Boolean = false
 )
 
 data class DayWeather(

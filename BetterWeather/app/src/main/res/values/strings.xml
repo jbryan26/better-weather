@@ -1,6 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <string name="app_name">BetterWeather</string>
   <string name="toolbar_name">SUNSHINE</string>
   <string name="degrees_string">°</string>
   <string name="ten_day_forecast_label">10-Day Forecast</string>
+  <string name="high_temp_string_template">%1$s°</string>
+  <string name="low_temp_string_template">%1$s°</string>
+  <string name="humidity_string_template">Humidity: %1$s</string>
+  <string name="pressure_string_template">Pressure: %1$s hPa</string>
+  <string name="wind_string_template">Wind: %1$s km/h %2$s</string>
 </resources>

@@ -32,14 +32,30 @@ class HomePageAdapter(
         position: Int
     ) {
         contentItemModels[position].apply {
-            viewHolder.forecastItemDayHighTemp.text = tempHigh
-            viewHolder.forecastItemDayLowTemp.text = tempLow
+            val context = viewHolder.container.context
+            viewHolder.forecastItemDayHighTemp.text = String.format(context.getString(R.string.high_temp_string_template), tempHigh)
+            viewHolder.forecastItemDayLowTemp.text = String.format(context.getString(R.string.low_temp_string_template), tempLow)
             viewHolder.forecastItemDayOfWeek.text = dayName
             viewHolder.forecastItemDayOutlook.text = weatherOutlook
-            viewHolder.forecastItemIcon.setImageDrawable(icon)
-            viewHolder.humidity.text = humidity
-            viewHolder.pressure.text = pressure
-            viewHolder.wind.text = wind
+            viewHolder.forecastItemIcon.setImageDrawable(context.getDrawable(iconId))
+            viewHolder.humidity.text = String.format(context.getString(R.string.humidity_string_template), humidity)
+            viewHolder.pressure.text = String.format(context.getString(R.string.pressure_string_template), pressure)
+            viewHolder.wind.text = String.format(context.getString(R.string.wind_string_template), windSpeed, windDirection)
+
+            if (isExpanded) {
+                viewHolder.showExpanded()
+            } else {
+                viewHolder.hideExpanded()
+            }
+
+            viewHolder.container.setOnClickListener {
+                this.isExpanded = !this.isExpanded
+                if (isExpanded) {
+                    viewHolder.showExpanded()
+                } else {
+                    viewHolder.hideExpanded()
+                }
+            }
         }
     }
 
